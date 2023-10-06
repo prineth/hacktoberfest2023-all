@@ -1,4 +1,7 @@
 import Box from "./components/box/page";
+import Logo from "../../../public/logo-hacktoberfest.svg";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Grid() {
   // 100 boxes
@@ -115,12 +118,35 @@ export default function Grid() {
       githubLink: "",
       githubProfilePic: "",
     },
-
   ];
 
   return (
     <div>
-      <div className="grid justify-stretch mx-10 grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-4 pt-10">
+      {/* svg */}
+      <div className="pl-20 pt-10 grid grid-cols-2">
+        <Image priority src={Logo} alt="logo" />
+        <div className="mr-20">
+          <div className="flex justify-end">
+            <div
+              className="border-2 border-[#93848d] hover:border-[#fff9ae] hover:bg-[#74677d2e] w-34 rounded-3xl"
+              style={{
+                boxShadow: "0 0 10px rgba(255, 255, 163, 0.4)",
+                backgroundImage: "url('http://localhost:3000/bg-header-img.png')",
+                backgroundSize: "cover", // Adjust the values as needed
+              }}
+            >
+              <Link
+                className="text-[#93848d] hover:text-white px-5 py-5 flex items-center justify-center"
+                href={"https://github.com/prineth/hacktoberfest2023-all"}
+              >
+                START HACKING
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="grid justify-stretch mx-5 sm:mx-16 grid-cols-1 md:grid-cols-5 sm:grid-cols-3 gap-4 pt-10">
         {data.map((item) => (
           <Box id={item.boxNo} />
         ))}

@@ -7,16 +7,28 @@ interface MyComponentProps {
 export default function Box(props: MyComponentProps) {
   return (
     <div
-      className="border-4 border-[#3d2e0f] relative"
-      style={{
-        boxShadow: "0 0 10px rgba(255, 255, 163, 0.4)", // Adjust the values as needed
-      }}
+      className="rounded-lg border-4 border-[#3d2e0f] relative"
+      style={
+        {
+          // Adjust the values as needed
+        }
+      }
     >
       <div
         key={props.id}
-        className="bg-[#fffba3] border-4 border-[#ab852d] hover:bg-slate-400 h-64 flex"
+        className="rounded-md bg-[#0f0913] hover:bg-[#55386843] border-4 border-[#ab852d] h-64 flex"
       >
-        <p className="p-1 text-xs sm:text-sm">{props.id}</p>
+        <div className="flex flex-col align-middle justify-center items-center">
+          {/* Github profile pic */}
+          <img
+            className="inline-block h-20 w-20 rounded-full ring-0 ring-white"
+            src="https://avatars.githubusercontent.com/u/70090385?v=4"
+            alt=""
+          ></img>
+          {/* Name */}
+          <p className="text-white">Prineth Fernando</p>
+          {/* Github link*/}
+        </div>
       </div>
     </div>
   );
